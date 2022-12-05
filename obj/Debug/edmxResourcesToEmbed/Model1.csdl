@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="libraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="books">
+    <Key>
+      <PropertyRef Name="id_book" />
+    </Key>
+    <Property Name="id_book" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="name_book" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="autor" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="year_of_public" Type="DateTime" Precision="0" />
+    <Property Name="quantity" Type="Decimal" Precision="5" Scale="0" />
+    <NavigationProperty Name="history" Relationship="Self.FK__history__book_id__4222D4EF" FromRole="books" ToRole="history" />
+  </EntityType>
+  <EntityType Name="history">
+    <Key>
+      <PropertyRef Name="id_history" />
+    </Key>
+    <Property Name="id_history" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="readers_id" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="book_id" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="books" Relationship="Self.FK__history__book_id__4222D4EF" FromRole="history" ToRole="books" />
+    <NavigationProperty Name="readers" Relationship="Self.FK__history__readers__412EB0B6" FromRole="history" ToRole="readers" />
+    <NavigationProperty Name="readers1" Relationship="Self.FK__readers__history__4316F928" FromRole="history" ToRole="readers" />
+  </EntityType>
+  <EntityType Name="readers">
+    <Key>
+      <PropertyRef Name="id_readers" />
+    </Key>
+    <Property Name="id_readers" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="fio" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="age" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="history_id" Type="Decimal" Precision="5" Scale="0" />
+    <NavigationProperty Name="history" Relationship="Self.FK__history__readers__412EB0B6" FromRole="readers" ToRole="history" />
+    <NavigationProperty Name="history1" Relationship="Self.FK__readers__history__4316F928" FromRole="readers" ToRole="history" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="fio" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="login_user" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="password_user" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__history__book_id__4222D4EF">
+    <End Role="books" Type="Self.books" Multiplicity="0..1" />
+    <End Role="history" Type="Self.history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id_book" />
+      </Principal>
+      <Dependent Role="history">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__history__readers__412EB0B6">
+    <End Role="readers" Type="Self.readers" Multiplicity="0..1" />
+    <End Role="history" Type="Self.history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="readers">
+        <PropertyRef Name="id_readers" />
+      </Principal>
+      <Dependent Role="history">
+        <PropertyRef Name="readers_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__readers__history__4316F928">
+    <End Role="history" Type="Self.history" Multiplicity="0..1" />
+    <End Role="readers" Type="Self.readers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="history">
+        <PropertyRef Name="id_history" />
+      </Principal>
+      <Dependent Role="readers">
+        <PropertyRef Name="history_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="libraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="books" EntityType="Self.books" />
+    <EntitySet Name="history" EntityType="Self.history" />
+    <EntitySet Name="readers" EntityType="Self.readers" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <AssociationSet Name="FK__history__book_id__4222D4EF" Association="Self.FK__history__book_id__4222D4EF">
+      <End Role="books" EntitySet="books" />
+      <End Role="history" EntitySet="history" />
+    </AssociationSet>
+    <AssociationSet Name="FK__history__readers__412EB0B6" Association="Self.FK__history__readers__412EB0B6">
+      <End Role="readers" EntitySet="readers" />
+      <End Role="history" EntitySet="history" />
+    </AssociationSet>
+    <AssociationSet Name="FK__readers__history__4316F928" Association="Self.FK__readers__history__4316F928">
+      <End Role="history" EntitySet="history" />
+      <End Role="readers" EntitySet="readers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище libraryModelContainer" CdmEntityContainer="libraryEntities1">
+    <EntitySetMapping Name="books">
+      <EntityTypeMapping TypeName="libraryModel.books">
+        <MappingFragment StoreEntitySet="books">
+          <ScalarProperty Name="id_book" ColumnName="id_book" />
+          <ScalarProperty Name="name_book" ColumnName="name_book" />
+          <ScalarProperty Name="autor" ColumnName="autor" />
+          <ScalarProperty Name="year_of_public" ColumnName="year_of_public" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="history">
+      <EntityTypeMapping TypeName="libraryModel.history">
+        <MappingFragment StoreEntitySet="history">
+          <ScalarProperty Name="id_history" ColumnName="id_history" />
+          <ScalarProperty Name="readers_id" ColumnName="readers_id" />
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="readers">
+      <EntityTypeMapping TypeName="libraryModel.readers">
+        <MappingFragment StoreEntitySet="readers">
+          <ScalarProperty Name="id_readers" ColumnName="id_readers" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="history_id" ColumnName="history_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="libraryModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="fio" ColumnName="fio" />
+          <ScalarProperty Name="login_user" ColumnName="login_user" />
+          <ScalarProperty Name="password_user" ColumnName="password_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

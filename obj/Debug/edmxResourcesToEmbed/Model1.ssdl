@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище libraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="books">
+    <Key>
+      <PropertyRef Name="id_book" />
+    </Key>
+    <Property Name="id_book" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="name_book" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="autor" Type="char" MaxLength="50" />
+    <Property Name="year_of_public" Type="date" />
+    <Property Name="quantity" Type="numeric" Precision="5" Scale="0" />
+  </EntityType>
+  <EntityType Name="history">
+    <Key>
+      <PropertyRef Name="id_history" />
+    </Key>
+    <Property Name="id_history" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="readers_id" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="book_id" Type="numeric" Precision="5" Scale="0" />
+    <Property Name="state" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="readers">
+    <Key>
+      <PropertyRef Name="id_readers" />
+    </Key>
+    <Property Name="id_readers" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="fio" Type="char" MaxLength="50" />
+    <Property Name="age" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="history_id" Type="numeric" Precision="5" Scale="0" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="fio" Type="char" MaxLength="50" />
+    <Property Name="login_user" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="password_user" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__history__book_id__4222D4EF">
+    <End Role="books" Type="Self.books" Multiplicity="0..1" />
+    <End Role="history" Type="Self.history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id_book" />
+      </Principal>
+      <Dependent Role="history">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__history__readers__412EB0B6">
+    <End Role="readers" Type="Self.readers" Multiplicity="0..1" />
+    <End Role="history" Type="Self.history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="readers">
+        <PropertyRef Name="id_readers" />
+      </Principal>
+      <Dependent Role="history">
+        <PropertyRef Name="readers_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__readers__history__4316F928">
+    <End Role="history" Type="Self.history" Multiplicity="0..1" />
+    <End Role="readers" Type="Self.readers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="history">
+        <PropertyRef Name="id_history" />
+      </Principal>
+      <Dependent Role="readers">
+        <PropertyRef Name="history_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище libraryModelContainer">
+    <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="history" EntityType="Self.history" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="readers" EntityType="Self.readers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__history__book_id__4222D4EF" Association="Self.FK__history__book_id__4222D4EF">
+      <End Role="books" EntitySet="books" />
+      <End Role="history" EntitySet="history" />
+    </AssociationSet>
+    <AssociationSet Name="FK__history__readers__412EB0B6" Association="Self.FK__history__readers__412EB0B6">
+      <End Role="readers" EntitySet="readers" />
+      <End Role="history" EntitySet="history" />
+    </AssociationSet>
+    <AssociationSet Name="FK__readers__history__4316F928" Association="Self.FK__readers__history__4316F928">
+      <End Role="history" EntitySet="history" />
+      <End Role="readers" EntitySet="readers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

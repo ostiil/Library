@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище libraryModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="id_book" />
+          </Key>
+          <Property Name="id_book" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="name_book" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="autor" Type="char" MaxLength="50" />
+          <Property Name="year_of_public" Type="char" MaxLength="50" />
+          <Property Name="quantity" Type="numeric" Precision="5" Scale="0" />
+        </EntityType>
+        <EntityType Name="history">
+          <Key>
+            <PropertyRef Name="id_history" />
+          </Key>
+          <Property Name="id_history" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="readers_id" Type="numeric" Precision="5" Scale="0" />
+          <Property Name="book_id" Type="numeric" Precision="5" Scale="0" />
+          <Property Name="state" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="readers">
+          <Key>
+            <PropertyRef Name="id_readers" />
+          </Key>
+          <Property Name="id_readers" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="fio" Type="char" MaxLength="50" />
+          <Property Name="age" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="history_id" Type="numeric" Precision="5" Scale="0" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="numeric" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="fio" Type="char" MaxLength="50" />
+          <Property Name="login_user" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="password_user" Type="char" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__history__book_id__4222D4EF">
+          <End Role="books" Type="Self.books" Multiplicity="0..1" />
+          <End Role="history" Type="Self.history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="books">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="history">
+              <PropertyRef Name="book_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__readershistory">
+          <End Role="readers" Type="Self.readers" Multiplicity="0..1" />
+          <End Role="history" Type="Self.history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="readers">
+              <PropertyRef Name="id_readers" />
+            </Principal>
+            <Dependent Role="history">
+              <PropertyRef Name="readers_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище libraryModelContainer">
+          <EntitySet Name="books" EntityType="Self.books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="history" EntityType="Self.history" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="readers" EntityType="Self.readers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__history__book_id__4222D4EF" Association="Self.FK__history__book_id__4222D4EF">
+            <End Role="books" EntitySet="books" />
+            <End Role="history" EntitySet="history" />
+          </AssociationSet>
+          <AssociationSet Name="FK__readershistory" Association="Self.FK__readershistory">
+            <End Role="readers" EntitySet="readers" />
+            <End Role="history" EntitySet="history" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="libraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="books">
+          <Key>
+            <PropertyRef Name="id_book" />
+          </Key>
+          <Property Name="id_book" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="name_book" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="autor" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="year_of_public" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="quantity" Type="Decimal" Precision="5" Scale="0" />
+          <NavigationProperty Name="history" Relationship="Self.FK__history__book_id__4222D4EF" FromRole="books" ToRole="history" />
+        </EntityType>
+        <EntityType Name="history">
+          <Key>
+            <PropertyRef Name="id_history" />
+          </Key>
+          <Property Name="id_history" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="readers_id" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="book_id" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="books" Relationship="Self.FK__history__book_id__4222D4EF" FromRole="history" ToRole="books" />
+          <NavigationProperty Name="readers" Relationship="Self.FK__readershistory" FromRole="history" ToRole="readers" />
+        </EntityType>
+        <EntityType Name="readers">
+          <Key>
+            <PropertyRef Name="id_readers" />
+          </Key>
+          <Property Name="id_readers" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="fio" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="age" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="history_id" Type="Decimal" Precision="5" Scale="0" />
+          <NavigationProperty Name="history" Relationship="Self.FK__readershistory" FromRole="readers" ToRole="history" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="fio" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="login_user" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="password_user" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__history__book_id__4222D4EF">
+          <End Role="books" Type="Self.books" Multiplicity="0..1" />
+          <End Role="history" Type="Self.history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="books">
+              <PropertyRef Name="id_book" />
+            </Principal>
+            <Dependent Role="history">
+              <PropertyRef Name="book_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__readershistory">
+          <End Role="readers" Type="Self.readers" Multiplicity="0..1" />
+          <End Role="history" Type="Self.history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="readers">
+              <PropertyRef Name="id_readers" />
+            </Principal>
+            <Dependent Role="history">
+              <PropertyRef Name="readers_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="libraryEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="books" EntityType="Self.books" />
+          <EntitySet Name="history" EntityType="Self.history" />
+          <EntitySet Name="readers" EntityType="Self.readers" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK__history__book_id__4222D4EF" Association="Self.FK__history__book_id__4222D4EF">
+            <End Role="books" EntitySet="books" />
+            <End Role="history" EntitySet="history" />
+          </AssociationSet>
+          <AssociationSet Name="FK__readershistory" Association="Self.FK__readershistory">
+            <End Role="readers" EntitySet="readers" />
+            <End Role="history" EntitySet="history" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище libraryModelContainer" CdmEntityContainer="libraryEntities1">
+          <EntitySetMapping Name="books">
+            <EntityTypeMapping TypeName="libraryModel.books">
+              <MappingFragment StoreEntitySet="books">
+                <ScalarProperty Name="id_book" ColumnName="id_book" />
+                <ScalarProperty Name="name_book" ColumnName="name_book" />
+                <ScalarProperty Name="autor" ColumnName="autor" />
+                <ScalarProperty Name="year_of_public" ColumnName="year_of_public" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="history">
+            <EntityTypeMapping TypeName="libraryModel.history">
+              <MappingFragment StoreEntitySet="history">
+                <ScalarProperty Name="id_history" ColumnName="id_history" />
+                <ScalarProperty Name="readers_id" ColumnName="readers_id" />
+                <ScalarProperty Name="book_id" ColumnName="book_id" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="readers">
+            <EntityTypeMapping TypeName="libraryModel.readers">
+              <MappingFragment StoreEntitySet="readers">
+                <ScalarProperty Name="id_readers" ColumnName="id_readers" />
+                <ScalarProperty Name="fio" ColumnName="fio" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="history_id" ColumnName="history_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="libraryModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="fio" ColumnName="fio" />
+                <ScalarProperty Name="login_user" ColumnName="login_user" />
+                <ScalarProperty Name="password_user" ColumnName="password_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
