@@ -14,6 +14,7 @@ namespace Library2022
     {
         private history current_history = new history();
         private books current_book = new books();
+        public string current_reader;
         public int idRemove;
 
         public UsersForm()
@@ -73,7 +74,7 @@ namespace Library2022
             current_history.readers_id = Convert.ToDecimal(ReadercomboBox.SelectedValue);
             current_history.book_id = Convert.ToDecimal(BookcomboBox.SelectedValue);
             current_history.state = StatecomboBox.Text;
-            current_history.id_history = HistorydataGridView.Rows.Count + 1;;
+            current_history.id_history = HistorydataGridView.Rows.Count ;;
             libraryEntities1.GetContext().history.Add(current_history);
             try
             {
@@ -90,6 +91,7 @@ namespace Library2022
 
         private void UsersForm_Activated(object sender, EventArgs e)
         {
+            libraryEntities1.GetContext().SaveChanges();
             libraryEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             ReadersdataGridView.DataSource = libraryEntities1.GetContext().readers.ToList();
             BookdataGridView.DataSource = libraryEntities1.GetContext().books.ToList();
@@ -180,6 +182,29 @@ namespace Library2022
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            decimal findReader;
+            current_reader = FindCombobox.Text;
+            for (int i = 0; i < HistorydataGridView.Rows.Count; i++)
+            {
+                HistorydataGridView.Rows[i].Selected = false;
+                for (int j = 0; j < HistorydataGridView.Columns.Count; j++)
+                {
+                    //Convert.ToInt32(HistorydataGridView.Rows[i].Cells[1].Value);
+                    if (libraryEntities1.GetContext().readers.ToString().Contains(FindCombobox.Text))      // Contains(current_reader.ToString()))
+                    {
+                        findReader = libraryEntities1.GetContext().readers.Create().id_readers;
+                        if (HistorydataGridView.Rows[i].Cells[1].Value.ToString().Contains(findReader.ToString()))
+                        {
+                            HistorydataGridView.Rows[i].Selected = true;
+                        }
+                    }
+                    
+                }
+            }
         }
     }
     }

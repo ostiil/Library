@@ -32,6 +32,11 @@ namespace Library2022
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.pageReaders = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.FindButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.readersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet4 = new Library2022.libraryDataSet4();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.ReadersdataGridView = new System.Windows.Forms.DataGridView();
@@ -39,9 +44,12 @@ namespace Library2022
             this.fioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.historyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet4 = new Library2022.libraryDataSet4();
             this.pageBooks = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.FindBookButton = new System.Windows.Forms.Button();
+            this.FindBookcomboBox = new System.Windows.Forms.ComboBox();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet1 = new Library2022.libraryDataSet1();
             this.DeleteBookBtn = new System.Windows.Forms.Button();
             this.EditBookBtn = new System.Windows.Forms.Button();
             this.AddBookBtn = new System.Windows.Forms.Button();
@@ -54,6 +62,12 @@ namespace Library2022
             this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSet5 = new Library2022.libraryDataSet5();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.FindLogButton = new System.Windows.Forms.Button();
+            this.FindCombobox = new System.Windows.Forms.ComboBox();
+            this.readersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet = new Library2022.libraryDataSet();
+            this.readersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet2 = new Library2022.libraryDataSet2();
             this.HistorydataGridView = new System.Windows.Forms.DataGridView();
             this.idhistoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.readersidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,47 +81,35 @@ namespace Library2022
             this.label1 = new System.Windows.Forms.Label();
             this.ReadercomboBox = new System.Windows.Forms.ComboBox();
             this.BookcomboBox = new System.Windows.Forms.ComboBox();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet1 = new Library2022.libraryDataSet1();
             this.StatecomboBox = new System.Windows.Forms.ComboBox();
-            this.readersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet2 = new Library2022.libraryDataSet2();
             this.booksTableAdapter = new Library2022.libraryDataSet1TableAdapters.booksTableAdapter();
-            this.libraryDataSet = new Library2022.libraryDataSet();
-            this.readersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.readersTableAdapter = new Library2022.libraryDataSetTableAdapters.readersTableAdapter();
             this.readersTableAdapter1 = new Library2022.libraryDataSet2TableAdapters.readersTableAdapter();
             this.historyTableAdapter = new Library2022.libraryDataSet3TableAdapters.historyTableAdapter();
             this.readersTableAdapter2 = new Library2022.libraryDataSet4TableAdapters.readersTableAdapter();
             this.booksTableAdapter1 = new Library2022.libraryDataSet5TableAdapters.booksTableAdapter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.FindButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.FindBookButton = new System.Windows.Forms.Button();
-            this.FindBookcomboBox = new System.Windows.Forms.ComboBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.pageReaders.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReadersdataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadersdataGridView)).BeginInit();
             this.pageBooks.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BookdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet5)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistorydataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -134,6 +136,49 @@ namespace Library2022
             this.pageReaders.TabIndex = 0;
             this.pageReaders.Text = "Учет читателей";
             this.pageReaders.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.FindButton);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(342, 257);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(382, 128);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Поиск";
+            // 
+            // FindButton
+            // 
+            this.FindButton.Location = new System.Drawing.Point(116, 90);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(173, 32);
+            this.FindButton.TabIndex = 4;
+            this.FindButton.Text = "Поиск";
+            this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.readersBindingSource2;
+            this.comboBox1.DisplayMember = "fio";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(361, 28);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.ValueMember = "fio";
+            // 
+            // readersBindingSource2
+            // 
+            this.readersBindingSource2.DataMember = "readers";
+            this.readersBindingSource2.DataSource = this.libraryDataSet4;
+            // 
+            // libraryDataSet4
+            // 
+            this.libraryDataSet4.DataSetName = "libraryDataSet4";
+            this.libraryDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EditButton
             // 
@@ -205,16 +250,6 @@ namespace Library2022
             this.historyidDataGridViewTextBoxColumn.ReadOnly = true;
             this.historyidDataGridViewTextBoxColumn.Visible = false;
             // 
-            // readersBindingSource2
-            // 
-            this.readersBindingSource2.DataMember = "readers";
-            this.readersBindingSource2.DataSource = this.libraryDataSet4;
-            // 
-            // libraryDataSet4
-            // 
-            this.libraryDataSet4.DataSetName = "libraryDataSet4";
-            this.libraryDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pageBooks
             // 
             this.pageBooks.Controls.Add(this.groupBox2);
@@ -229,6 +264,49 @@ namespace Library2022
             this.pageBooks.TabIndex = 1;
             this.pageBooks.Text = "Учет книг";
             this.pageBooks.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.FindBookButton);
+            this.groupBox2.Controls.Add(this.FindBookcomboBox);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox2.Location = new System.Drawing.Point(342, 257);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(382, 128);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Поиск";
+            // 
+            // FindBookButton
+            // 
+            this.FindBookButton.Location = new System.Drawing.Point(115, 87);
+            this.FindBookButton.Name = "FindBookButton";
+            this.FindBookButton.Size = new System.Drawing.Size(173, 32);
+            this.FindBookButton.TabIndex = 4;
+            this.FindBookButton.Text = "Поиск";
+            this.FindBookButton.UseVisualStyleBackColor = true;
+            this.FindBookButton.Click += new System.EventHandler(this.FindBookButton_Click);
+            // 
+            // FindBookcomboBox
+            // 
+            this.FindBookcomboBox.DataSource = this.booksBindingSource;
+            this.FindBookcomboBox.DisplayMember = "name_book";
+            this.FindBookcomboBox.FormattingEnabled = true;
+            this.FindBookcomboBox.Location = new System.Drawing.Point(6, 25);
+            this.FindBookcomboBox.Name = "FindBookcomboBox";
+            this.FindBookcomboBox.Size = new System.Drawing.Size(361, 28);
+            this.FindBookcomboBox.TabIndex = 0;
+            this.FindBookcomboBox.ValueMember = "name_book";
+            // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "books";
+            this.booksBindingSource.DataSource = this.libraryDataSet1;
+            // 
+            // libraryDataSet1
+            // 
+            this.libraryDataSet1.DataSetName = "libraryDataSet1";
+            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // DeleteBookBtn
             // 
@@ -326,6 +404,8 @@ namespace Library2022
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.FindLogButton);
+            this.tabPage1.Controls.Add(this.FindCombobox);
             this.tabPage1.Controls.Add(this.HistorydataGridView);
             this.tabPage1.Controls.Add(this.AddToHistoryButton);
             this.tabPage1.Controls.Add(this.label3);
@@ -342,6 +422,49 @@ namespace Library2022
             this.tabPage1.Text = "Контроль сдачи книг";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // FindLogButton
+            // 
+            this.FindLogButton.Location = new System.Drawing.Point(41, 307);
+            this.FindLogButton.Name = "FindLogButton";
+            this.FindLogButton.Size = new System.Drawing.Size(184, 23);
+            this.FindLogButton.TabIndex = 10;
+            this.FindLogButton.Text = "Добавить запись в историю";
+            this.FindLogButton.UseVisualStyleBackColor = true;
+            this.FindLogButton.Visible = false;
+            this.FindLogButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FindCombobox
+            // 
+            this.FindCombobox.DataSource = this.readersBindingSource1;
+            this.FindCombobox.DisplayMember = "fio";
+            this.FindCombobox.FormattingEnabled = true;
+            this.FindCombobox.Location = new System.Drawing.Point(41, 261);
+            this.FindCombobox.Name = "FindCombobox";
+            this.FindCombobox.Size = new System.Drawing.Size(184, 21);
+            this.FindCombobox.TabIndex = 9;
+            this.FindCombobox.ValueMember = "id_readers";
+            this.FindCombobox.Visible = false;
+            // 
+            // readersBindingSource
+            // 
+            this.readersBindingSource.DataMember = "readers";
+            this.readersBindingSource.DataSource = this.libraryDataSet;
+            // 
+            // libraryDataSet
+            // 
+            this.libraryDataSet.DataSetName = "libraryDataSet";
+            this.libraryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // readersBindingSource1
+            // 
+            this.readersBindingSource1.DataMember = "readers";
+            this.readersBindingSource1.DataSource = this.libraryDataSet2;
+            // 
+            // libraryDataSet2
+            // 
+            this.libraryDataSet2.DataSetName = "libraryDataSet2";
+            this.libraryDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // HistorydataGridView
             // 
             this.HistorydataGridView.AutoGenerateColumns = false;
@@ -356,6 +479,7 @@ namespace Library2022
             this.HistorydataGridView.Location = new System.Drawing.Point(267, 142);
             this.HistorydataGridView.Name = "HistorydataGridView";
             this.HistorydataGridView.ReadOnly = true;
+            this.HistorydataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.HistorydataGridView.Size = new System.Drawing.Size(444, 236);
             this.HistorydataGridView.TabIndex = 7;
             // 
@@ -459,16 +583,6 @@ namespace Library2022
             this.BookcomboBox.TabIndex = 1;
             this.BookcomboBox.ValueMember = "id_book";
             // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "books";
-            this.booksBindingSource.DataSource = this.libraryDataSet1;
-            // 
-            // libraryDataSet1
-            // 
-            this.libraryDataSet1.DataSetName = "libraryDataSet1";
-            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // StatecomboBox
             // 
             this.StatecomboBox.FormattingEnabled = true;
@@ -480,29 +594,9 @@ namespace Library2022
             this.StatecomboBox.Size = new System.Drawing.Size(184, 21);
             this.StatecomboBox.TabIndex = 0;
             // 
-            // readersBindingSource1
-            // 
-            this.readersBindingSource1.DataMember = "readers";
-            this.readersBindingSource1.DataSource = this.libraryDataSet2;
-            // 
-            // libraryDataSet2
-            // 
-            this.libraryDataSet2.DataSetName = "libraryDataSet2";
-            this.libraryDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // booksTableAdapter
             // 
             this.booksTableAdapter.ClearBeforeFill = true;
-            // 
-            // libraryDataSet
-            // 
-            this.libraryDataSet.DataSetName = "libraryDataSet";
-            this.libraryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // readersBindingSource
-            // 
-            this.readersBindingSource.DataMember = "readers";
-            this.readersBindingSource.DataSource = this.libraryDataSet;
             // 
             // readersTableAdapter
             // 
@@ -523,72 +617,6 @@ namespace Library2022
             // booksTableAdapter1
             // 
             this.booksTableAdapter1.ClearBeforeFill = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.FindButton);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(342, 257);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 128);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Поиск";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.readersBindingSource2;
-            this.comboBox1.DisplayMember = "fio";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(361, 28);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "fio";
-            // 
-            // FindButton
-            // 
-            this.FindButton.Location = new System.Drawing.Point(116, 90);
-            this.FindButton.Name = "FindButton";
-            this.FindButton.Size = new System.Drawing.Size(173, 32);
-            this.FindButton.TabIndex = 4;
-            this.FindButton.Text = "Поиск";
-            this.FindButton.UseVisualStyleBackColor = true;
-            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.FindBookButton);
-            this.groupBox2.Controls.Add(this.FindBookcomboBox);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(342, 257);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(382, 128);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Поиск";
-            // 
-            // FindBookButton
-            // 
-            this.FindBookButton.Location = new System.Drawing.Point(115, 87);
-            this.FindBookButton.Name = "FindBookButton";
-            this.FindBookButton.Size = new System.Drawing.Size(173, 32);
-            this.FindBookButton.TabIndex = 4;
-            this.FindBookButton.Text = "Поиск";
-            this.FindBookButton.UseVisualStyleBackColor = true;
-            this.FindBookButton.Click += new System.EventHandler(this.FindBookButton_Click);
-            // 
-            // FindBookcomboBox
-            // 
-            this.FindBookcomboBox.DataSource = this.booksBindingSource;
-            this.FindBookcomboBox.DisplayMember = "name_book";
-            this.FindBookcomboBox.FormattingEnabled = true;
-            this.FindBookcomboBox.Location = new System.Drawing.Point(6, 25);
-            this.FindBookcomboBox.Name = "FindBookcomboBox";
-            this.FindBookcomboBox.Size = new System.Drawing.Size(361, 28);
-            this.FindBookcomboBox.TabIndex = 0;
-            this.FindBookcomboBox.ValueMember = "name_book";
             // 
             // ExitButton
             // 
@@ -614,26 +642,26 @@ namespace Library2022
             this.Load += new System.EventHandler(this.UsersForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.pageReaders.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ReadersdataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadersdataGridView)).EndInit();
             this.pageBooks.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BookdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet5)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistorydataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -697,5 +725,7 @@ namespace Library2022
         private System.Windows.Forms.Button FindBookButton;
         private System.Windows.Forms.ComboBox FindBookcomboBox;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.ComboBox FindCombobox;
+        private System.Windows.Forms.Button FindLogButton;
     }
 }
