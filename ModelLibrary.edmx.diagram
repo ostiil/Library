@@ -6,11 +6,16 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d60c73d141364e918b575bec6b5240fd" Name="Diagram1">
         <EntityTypeShape EntityType="libraryModel.books" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="libraryModel.history" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="libraryModel.readers" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="libraryModel.users" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryModel.history" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryModel.readers" Width="1.5" PointX="0.875" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="libraryModel.users" Width="1.5" PointX="5.375" PointY="2.125" IsExpanded="true" />
         <AssociationConnector Association="libraryModel.FK__history__book_id__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="libraryModel.FK__readershistory" ManuallyRouted="false" />
+        <AssociationConnector Association="libraryModel.FK__readershistory" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2.375" PointY="4.475042238026874" />
+          <ConnectorPoint PointX="5" PointY="4.475042238026874" />
+          <ConnectorPoint PointX="5" PointY="1.4266623564231722" />
+          <ConnectorPoint PointX="4.625" PointY="1.4266623564231722" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

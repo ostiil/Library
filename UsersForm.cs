@@ -13,7 +13,7 @@ namespace Library2022
     public partial class UsersForm : Form
     {
         private history current_history = new history();
-        private books current_book = new books();
+        //private books current_book = new books();
         public string current_reader;
         public int idRemove;
 
@@ -95,6 +95,10 @@ namespace Library2022
             libraryEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             ReadersdataGridView.DataSource = libraryEntities1.GetContext().readers.ToList();
             BookdataGridView.DataSource = libraryEntities1.GetContext().books.ToList();
+            comboBox1.DataSource = libraryEntities1.GetContext().readers.ToList();
+            FindBookcomboBox.DataSource = libraryEntities1.GetContext().books.ToList();
+            ReadercomboBox.DataSource = libraryEntities1.GetContext().readers.ToList();
+            BookcomboBox.DataSource = libraryEntities1.GetContext().books.ToList();
         }
 
         private void AddBookBtn_Click(object sender, EventArgs e)

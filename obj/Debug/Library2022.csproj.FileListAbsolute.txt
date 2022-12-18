@@ -17,3 +17,4 @@ D:\c#\Library2022\obj\Debug\Library2022.csproj.CopyComplete
 D:\c#\Library2022\obj\Debug\Library2022.AddFormReaders.resources
 D:\c#\Library2022\obj\Debug\Library2022.AddBookForm.resources
 D:\c#\Library2022\obj\Debug\Library2022.csproj.AssemblyReference.cache
+D:\c#\Library2022\obj\Debug\Library2022.csproj.SuggestedBindingRedirects.cache

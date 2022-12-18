@@ -64,8 +64,6 @@ namespace Library2022
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.FindLogButton = new System.Windows.Forms.Button();
             this.FindCombobox = new System.Windows.Forms.ComboBox();
-            this.readersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet = new Library2022.libraryDataSet();
             this.readersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSet2 = new Library2022.libraryDataSet2();
             this.HistorydataGridView = new System.Windows.Forms.DataGridView();
@@ -82,6 +80,8 @@ namespace Library2022
             this.ReadercomboBox = new System.Windows.Forms.ComboBox();
             this.BookcomboBox = new System.Windows.Forms.ComboBox();
             this.StatecomboBox = new System.Windows.Forms.ComboBox();
+            this.readersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet = new Library2022.libraryDataSet();
             this.booksTableAdapter = new Library2022.libraryDataSet1TableAdapters.booksTableAdapter();
             this.readersTableAdapter = new Library2022.libraryDataSetTableAdapters.readersTableAdapter();
             this.readersTableAdapter1 = new Library2022.libraryDataSet2TableAdapters.readersTableAdapter();
@@ -103,13 +103,13 @@ namespace Library2022
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet5)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistorydataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -317,6 +317,7 @@ namespace Library2022
             this.DeleteBookBtn.TabIndex = 6;
             this.DeleteBookBtn.Text = "Удалить запись";
             this.DeleteBookBtn.UseVisualStyleBackColor = true;
+            this.DeleteBookBtn.Visible = false;
             this.DeleteBookBtn.Click += new System.EventHandler(this.DeleteBookBtn_Click);
             // 
             // EditBookBtn
@@ -444,16 +445,6 @@ namespace Library2022
             this.FindCombobox.TabIndex = 9;
             this.FindCombobox.ValueMember = "id_readers";
             this.FindCombobox.Visible = false;
-            // 
-            // readersBindingSource
-            // 
-            this.readersBindingSource.DataMember = "readers";
-            this.readersBindingSource.DataSource = this.libraryDataSet;
-            // 
-            // libraryDataSet
-            // 
-            this.libraryDataSet.DataSetName = "libraryDataSet";
-            this.libraryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // readersBindingSource1
             // 
@@ -594,6 +585,16 @@ namespace Library2022
             this.StatecomboBox.Size = new System.Drawing.Size(184, 21);
             this.StatecomboBox.TabIndex = 0;
             // 
+            // readersBindingSource
+            // 
+            this.readersBindingSource.DataMember = "readers";
+            this.readersBindingSource.DataSource = this.libraryDataSet;
+            // 
+            // libraryDataSet
+            // 
+            this.libraryDataSet.DataSetName = "libraryDataSet";
+            this.libraryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // booksTableAdapter
             // 
             this.booksTableAdapter.ClearBeforeFill = true;
@@ -655,13 +656,13 @@ namespace Library2022
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet5)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistorydataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
